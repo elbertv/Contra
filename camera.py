@@ -8,7 +8,7 @@ class Camera(object):
 
     def __init__(self, width, height):
         # Inicializa la posición de la cámara en el origen (0,0)
-    	self.pos = vec(0,0)
+        self.pos = vec(0,0)
 
     def update(self, sprite):
         """
@@ -18,15 +18,15 @@ class Camera(object):
             sprite: El sprite del jugador a seguir
         """
         # Si el sprite puede moverse, la cámara sigue su posición en X
-    	if sprite.canMove:
-    		self.pos.x = -sprite.pos.x
+        if sprite.canMove:
+            self.pos.x = -sprite.pos.x
 
     	# Limita el movimiento de la cámara al límite izquierdo
-    	if self.pos.x >= LEFT_BOUND:
-    		self.pos.x = LEFT_BOUND
+        if self.pos.x >= LEFT_BOUND:
+            self.pos.x = LEFT_BOUND
     	# Limita el movimiento de la cámara al límite derecho
-    	elif self.pos.x <= RIGHT_BOUND:
-    		self.pos.x = RIGHT_BOUND
+        elif self.pos.x <= RIGHT_BOUND:
+            self.pos.x = RIGHT_BOUND
 
     	# Movimiento vertical deshabilitado (comentado)
     	#self.pos.y = min(-sprite.pos.y+HEIGHT/2,0)
